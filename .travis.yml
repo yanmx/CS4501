@@ -17,6 +17,7 @@ before_install:
  - docker rm mysql-cmdline
  
 before_script:
+ - docker-compose build
  - docker-compose up -d
 script:
  - docker exec -it cs4501_models_1 bash -c "cd project2 && ./manage.py test"
